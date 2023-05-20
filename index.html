@@ -13,21 +13,60 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
-    
-        <style>
-      .video-container {
+
+    <style>
+      /* Add spinner styles */
+      .spinner {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
           display: flex;
+          align-items: center;
           justify-content: center;
+          z-index: 9999;
       }
 
-      .video {
-          max-width: 100%;
+      .spinner .fa-spin {
+          font-size: 3rem;
+          color: #ffffff;
       }
   </style>
 
-
 </head>
 <body>
+
+  <!-- Add spinner HTML -->
+<div class="spinner" id="spinner">
+  <i class="fas fa-spinner fa-spin"></i>
+</div>
+
+<!-- Rest of your HTML code -->
+
+<!-- Add JavaScript to show/hide the spinner -->
+<script>
+  // Show the spinner
+  function showSpinner() {
+      document.getElementById('spinner').style.display = 'flex';
+  }
+
+  // Hide the spinner
+  function hideSpinner() {
+      document.getElementById('spinner').style.display = 'none';
+  }
+
+  // Show the spinner when the page starts loading
+  window.addEventListener('load', function() {
+      showSpinner();
+  });
+
+  // Hide the spinner after 2 seconds
+  setTimeout(function() {
+      hideSpinner();
+  }, 2000);
+</script>
     
 <!-- header section starts  -->
 
